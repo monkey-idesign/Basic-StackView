@@ -17,23 +17,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let yellowView = UIView()
-        yellowView.backgroundColor = .yellow
-        yellowView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        //cmd + cntro + e for rename
+        let topSubviews = [UIColor.gray, UIColor.darkGray, UIColor.blue].map { (color) -> UIView in
+            
+            let v = UIView()
+            v.backgroundColor = color
+            return v
+            
+        }
+        
+        //let yellowView = UIView()
+        let topStackView = UIStackView(arrangedSubviews: topSubviews)
+        topStackView.distribution = .fillEqually
+        topStackView.backgroundColor = .yellow
+        topStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
         
         let greenView = UIView()
         greenView.backgroundColor = .green
         
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
-        blueView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        //let BottomStackView = UIView()
+        let BottomSubView = [UIColor.red, UIColor.yellow, UIColor.purple, UIColor.green, UIColor.darkGray].map { (color) -> UIView in
+            
+            let v = UIView()
+            v.backgroundColor = color
+            return v
+            
+        }
+        let BottomStackView = UIStackView(arrangedSubviews: BottomSubView)
+        //BottomStackView.backgroundColor = .blue
+        BottomStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        BottomStackView.distribution = .fillEqually
         
-        let stackView = UIStackView(arrangedSubviews: [yellowView, greenView, blueView])
+        let contentStackView = UIStackView(arrangedSubviews: [topStackView, greenView, BottomStackView])
         //stackView.distribution = .fillEqually
-        stackView.axis = .vertical
+        contentStackView.axis = .vertical
         
-        view.addSubview(stackView)
-        stackView.frame = .init(x: 0, y: 0, width: 320, height: 250)
+        view.addSubview(contentStackView)
+        contentStackView.frame = .init(x: 0, y: 0, width: 320, height: 250)
         
         /*First Method
         
@@ -46,7 +67,7 @@ class ViewController: UIViewController {
          */
         
         //Second Method
-        stackView.fillSuperview()
+        contentStackView.fillSuperview()
     }
  
 
