@@ -37,17 +37,9 @@ class ViewController: UIViewController {
         greenView.backgroundColor = .green
         
         //let BottomStackView = UIView()
-        let BottomSubView = [UIColor.red, UIColor.yellow, UIColor.purple, UIColor.green, UIColor.darkGray].map { (color) -> UIView in
-            
-            let v = UIView()
-            v.backgroundColor = color
-            return v
-            
-        }
-        let BottomStackView = UIStackView(arrangedSubviews: BottomSubView)
-        //BottomStackView.backgroundColor = .blue
-        BottomStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        BottomStackView.distribution = .fillEqually
+        
+        let BottomStackView = HomeCtrlStackView()
+               
         
         let contentStackView = UIStackView(arrangedSubviews: [topStackView, greenView, BottomStackView])
         //stackView.distribution = .fillEqually
