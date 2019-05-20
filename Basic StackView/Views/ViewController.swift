@@ -12,45 +12,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let topStackView = TopNavigationStackView()
+    let contentStackView = UIView()
+    
+    
+    //let BottomStackView = UIView()
+    
+    let BottomStackView = HomeCtrlStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         //cmd + cntro + e for rename
-        let topSubviews = [UIColor.gray, UIColor.darkGray, UIColor.blue].map { (color) -> UIView in
-            
-            let v = UIView()
-            v.backgroundColor = color
-            return v
-            
-        }
+        
+//        let topSubviews = [UIColor.gray, UIColor.darkGray, UIColor.blue].map { (color) -> UIView in
+//
+//            let v = UIView()
+//            v.backgroundColor = color
+//            return v
+//
+//        }
         
         //let yellowView = UIView()
-        let topStackView = UIStackView(arrangedSubviews: topSubviews)
-        topStackView.distribution = .fillEqually
-        topStackView.backgroundColor = .yellow
-        topStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        //let topStackView = UIStackView(arrangedSubviews: topSubviews)
+     
+        contentStackView.backgroundColor = .green
         
-        
-        let greenView = UIView()
-        greenView.backgroundColor = .green
-        
-        //let BottomStackView = UIView()
-        
-        let BottomStackView = HomeCtrlStackView()
-               
-        
-        let contentStackView = UIStackView(arrangedSubviews: [topStackView, greenView, BottomStackView])
+        let StackViewLayout = UIStackView(arrangedSubviews: [topStackView, contentStackView, BottomStackView])
         //stackView.distribution = .fillEqually
-        contentStackView.axis = .vertical
-        
-        view.addSubview(contentStackView)
-        contentStackView.frame = .init(x: 0, y: 0, width: 320, height: 250)
+        StackViewLayout.axis = .vertical
+        view.addSubview(StackViewLayout)
+        StackViewLayout.anchor(top: view.safeAreaLayoutGuide.topAnchor , leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
         
         /*First Method
         
          //Enables auto layout for us
+        contentStackView.frame = .init(x: 0, y: 0, width: 300, height: 250)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -59,7 +58,7 @@ class ViewController: UIViewController {
          */
         
         //Second Method
-        contentStackView.fillSuperview()
+        StackViewLayout.fillSuperview()
     }
  
 

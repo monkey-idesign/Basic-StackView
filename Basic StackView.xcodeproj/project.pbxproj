@@ -16,6 +16,7 @@
 		18A7BC6722925DE000C67944 /* Basic_StackViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7BC6622925DE000C67944 /* Basic_StackViewUITests.swift */; };
 		18A7BC76229263B200C67944 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7BC75229263B200C67944 /* Extensions+UIView.swift */; };
 		18A7BC7922929C2B00C67944 /* HomeCtrlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7BC7822929C2B00C67944 /* HomeCtrlStackView.swift */; };
+		18A7BC7B2292A82300C67944 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7BC7A2292A82300C67944 /* TopNavigationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		18A7BC6822925DE000C67944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A7BC75229263B200C67944 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		18A7BC7822929C2B00C67944 /* HomeCtrlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCtrlStackView.swift; sourceTree = "<group>"; };
+		18A7BC7A2292A82300C67944 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				18A7BC4822925DDE00C67944 /* ViewController.swift */,
+				18A7BC7A2292A82300C67944 /* TopNavigationStackView.swift */,
 				18A7BC7822929C2B00C67944 /* HomeCtrlStackView.swift */,
 			);
 			path = Views;
@@ -282,6 +285,7 @@
 				18A7BC7922929C2B00C67944 /* HomeCtrlStackView.swift in Sources */,
 				18A7BC4722925DDE00C67944 /* AppDelegate.swift in Sources */,
 				18A7BC76229263B200C67944 /* Extensions+UIView.swift in Sources */,
+				18A7BC7B2292A82300C67944 /* TopNavigationStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
